@@ -2,7 +2,7 @@
 #version: 1.2.1
 #desc: cachecloud 镜像
 #################################
-FROM maven:3.3.9-jdk-7-alpine
+FROM maven:3.6-jdk-8-alpine
 
 MAINTAINER truman
 
