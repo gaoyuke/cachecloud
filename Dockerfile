@@ -9,11 +9,8 @@ MAINTAINER truman
 ENV CACHECLOUD_VERSION 1.2.1
 ENV base_dir /opt/cachecloud-web
 WORKDIR ${base_dir}
-RUN apk  --update add curl tar bash unzip && \
-       curl -fsSL -o /tmp/cachecloud.tar.gz https://github.com/gaoyuke/cachecloud/archive/${CACHECLOUD_VERSION}.tar.gz && \
-       tar -C /tmp -xzf /tmp/cachecloud.tar.gz  && \
-       rm -rf /tmp/cachecloud.tar.gz  && \
-       cd /tmp/cachecloud-${CACHECLOUD_VERSION} && \
+ADD ./ /tmp/cachecloud-${CACHECLOUD_VERSION}
+RUN cd /tmp/cachecloud-${CACHECLOUD_VERSION} && \
        mvn clean compile install -Plocal   && \
        mkdir -p ${base_dir}/logs && \
        cp /tmp/cachecloud-${CACHECLOUD_VERSION}/script/start.sh ${base_dir} && \
