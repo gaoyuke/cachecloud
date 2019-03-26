@@ -1,0 +1,13 @@
+version: '2'
+services:
+  cachecloud:
+    image: cachecloud:1.2
+    container_name: cachecloud-service
+    build: .
+    ports:
+      - "39999:9999"
+      - "38585:8585"
+    environment:
+      DB_URL: 172.60.30.99:3306
+      DB_USER: root
+      DB_PASSWORD: 123456
