@@ -1,7 +1,7 @@
 version: '2'
 services:
   cachecloud:
-    image: cachecloud:1.2
+    image: gaoyuke19970111/cachecloud:latest
     container_name: cachecloud-service
     build: .
     ports:
