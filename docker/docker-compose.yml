@@ -3,7 +3,6 @@ services:
   cachecloud:
     image: gaoyuke19970111/cachecloud:latest
     container_name: cachecloud-service
-    build: .
     ports:
       - "39999:9999"
       - "38585:8585"
